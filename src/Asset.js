@@ -62,7 +62,7 @@ class Asset {
   }
 
   addURLDependency(url, from = this.name, opts) {
-    if (!url || isURL(url)) {
+    if (!url || isURL(url) || url.startsWith('data:')) {
       return url;
     }
 
